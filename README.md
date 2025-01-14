@@ -2,7 +2,7 @@
 
 Este documento explica cómo configurar y ejecutar dos servicios de React y dos de Node.js utilizando Docker Compose, con configuraciones específicas para entornos de desarrollo y producción.
 
-Si te perdiste *como Conectar React con Node usando Docker_Compose* pincha aquí: [Documentación]([https://github.com/frperezp/next-productivity-API](https://github.com/rsensomontojo/Documentacion_Conectar_React_con_Node_usando_Docker_Compose)).
+Si te perdiste *como Conectar React con Node usando Docker_Compose*, ir a la [documentación](https://github.com/rsensomontojo/Documentacion_Conectar_React_con_Node_usando_Docker_Compose).
 
 
 ---
@@ -100,7 +100,7 @@ networks:
    - Se crea una red llamada `productivity-network` para permitir la comunicación entre los contenedores.
 
 4. **Volúmenes:**
-   - Los volúmenes sincronizan los archivos locales con los contenedores, permitiendo desarrollo en vivo.
+   - Los volúmenes sincronizan los archivos locales con los contenedores, permitiendo desarrollo.
 
 ---
 
