@@ -208,7 +208,7 @@ Esto construirá las imágenes de Docker y levantará los contenedores.
 - Node 2: [http://localhost:5002](http://localhost:5002)
 
 ---
-## Solución de problemas comunes
+## Solución de errores
 
 ### Error: `UnixHTTPConnectionPool` o `Read timed out`
 
