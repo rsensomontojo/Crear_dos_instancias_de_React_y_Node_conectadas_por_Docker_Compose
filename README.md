@@ -208,6 +208,38 @@ Esto construirá las imágenes de Docker y levantará los contenedores.
 - Node 2: [http://localhost:5002](http://localhost:5002)
 
 ---
+## Solución de problemas comunes
+
+### Error: `UnixHTTPConnectionPool` o `Read timed out`
+
+Si encuentras este error:
+
+```bash
+ERROR: for react-app-2  UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=60)
+ERROR: An HTTP request took too long to complete. Retry with --verbose to obtain debug information.
+```
+
+Es posible que las solicitudes HTTP a los contenedores estén tardando más de 60 segundos. Para solucionarlo, puedes aumentar el tiempo de espera predeterminado de Docker Compose.
+
+#### Soluciones:
+
+1. **Aumentar el tiempo de espera al ejecutar el comando:**
+   ```bash
+   COMPOSE_HTTP_TIMEOUT=200 docker-compose up --build
+   ```
+
+2. **Exportar la variable de entorno globalmente:**
+   ```bash
+   export COMPOSE_HTTP_TIMEOUT=200
+   docker-compose up --build
+   ```
+
+3. **Optimizar los Dockerfiles:**
+   - Usa capas de caché eficientemente. Por ejemplo, copia primero `package.json` y `package-lock.json` antes del resto de los archivos para minimizar el tiempo de instalación de dependencias si no han cambiado.
+
+4. **Asignar más recursos a Docker:**
+   - En Docker Desktop, aumenta los recursos asignados (CPU, RAM) desde la configuración.
+
+---
 
 ¡Y listo! Ahora tienes configurados dos servicios de React y Node conectados mediante Docker Compose.
-
